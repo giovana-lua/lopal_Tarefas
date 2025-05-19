@@ -7,69 +7,76 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import br.dev.giovana.tarefas.model.Funcionario;
+
 public class Main {
-	
+
 	private static String path = "c:\\Users\\25133664\\ProjetoTarefas\\tarefas.txt";
-	
+
 	public static void main(String[] args) {
-		
-		
-		//gravarArquivo();
-		lerArquivo();
+
+		Funcionario funcionario1 = new Funcionario("Maria da Silva");
+		Funcionario funcionario2 = new Funcionario();
+
+		funcionario2.setMatricula(9);
+		funcionario2.setNome("patricia gomes");
+		funcionario2.setCargo("gerente de ti");
+
+		Funcionario funcionario3 = new Funcionario("Programador", "Ana maria");
+		Funcionario funcionario4 = new Funcionario("Programador", "Pedro", 2);
+
+		System.out.println(funcionario1);
+		System.out.println(funcionario2);
+		System.out.println(funcionario3);
+		System.out.println(funcionario4);
 
 	}
-	
+
 	private static void gravarArquivo() {
-		
+
 		FileWriter fw = null;
 		BufferedWriter bw = null;
-		
+
 		try {
 			fw = new FileWriter(path, true);
 			bw = new BufferedWriter(fw);
-			
+
 			String novalinha = "isso é uma nova linha!\n";
 			bw.write(novalinha);
 			bw.flush();
-			
-			
+
 		} catch (Exception erro) {
 			System.out.println(erro.getMessage());
-			
+
 		}
-		
+
 	}
-	
+
 	private static void lerArquivo() {
-		
+
 		FileReader fr = null;
 		BufferedReader br = null;
-		
-		try { 
+
+		try {
 			fr = new FileReader(path);
 			br = new BufferedReader(fr);
-			
-			
+
 			String linha = br.readLine();
-			
-			while (linha !=null) {
+
+			while (linha != null) {
 				String registro[] = linha.split(";");
 				System.out.println("nome:" + registro[0]);
 				System.out.println("nome:" + registro[1]);
-				System.out.println("-------------------" );
-				
+				System.out.println("-------------------");
+
 				linha = br.readLine();
 			}
-			
-			
-			
+
 		} catch (FileNotFoundException erro) {
 			System.out.println(erro.getMessage());
-		}
-		catch (IOException erro) {
+		} catch (IOException erro) {
 			System.out.println(erro.getMessage());
-		}
-		catch (Exception erro) {
+		} catch (Exception erro) {
 			System.out.println(erro.getMessage());
 		}
 	}
