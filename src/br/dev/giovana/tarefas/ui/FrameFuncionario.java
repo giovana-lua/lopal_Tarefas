@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -26,17 +27,19 @@ public class FrameFuncionario {
 	private JButton btnSalvar;
 	private JButton btnSair;
 	
-	public FrameFuncionario() {}
+	public FrameFuncionario(JFrame frame) {
+		criarTela(frame);
+	}
 	
 	
-	private void criarTela() {
-		JFrame tela = new JFrame();
+	private void criarTela(JFrame frame) {
+		JDialog tela = new JDialog(frame, true);
 		tela.setTitle("Cadastro");
 		tela.setSize(400, 400);
 		tela.setResizable(false);
-		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tela.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		tela.setLayout(null);
-		tela.setLocationRelativeTo(null);
+		tela.setLocationRelativeTo(frame);
 		
 		Container painel = tela.getContentPane();
 		
@@ -102,16 +105,11 @@ public class FrameFuncionario {
 				//JOptionPane.showMessageDialog(tela, "Fechando a aplicação....", "Fechar",JOptionPane.ERROR_MESSAGE);
 				int resposta = JOptionPane.showConfirmDialog(tela, "Confirma a saída do sistema?");
 				if (resposta == 0) {
-					System.exit(JFrame.EXIT_ON_CLOSE);
+					tela.dispose();
 				}
 				
 			}
-		
-		
 		});
-		
-		
-		
 		
 		tela.setVisible(true);
 	}
