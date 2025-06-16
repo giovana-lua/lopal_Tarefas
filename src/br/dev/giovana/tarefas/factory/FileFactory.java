@@ -8,29 +8,53 @@ import java.io.IOException;
 
 public class FileFactory {
 
-	private String arquivo = "C:\\Users\\25133664\\ProjetoTarefas\\funcionarios.csv";
+	private String arquivofuncionario = "C:\\Users\\25133664\\ProjetoTarefas\\funcionarios.csv";
+	private String arquivotarefas = "C:\\Users\\25133664\\ProjetoTarefas\\tarefas.csv";
 	
-	private FileWriter fw;
-	private BufferedWriter bw;
-	private FileReader fr;
-	private BufferedReader br;
+	private FileWriter fwf;
+	private BufferedWriter bwf;
+	private FileReader frf;
+	private BufferedReader brf;
+	private FileWriter fwt;
+	private BufferedWriter bwt;
+	private FileReader frt;
+	private BufferedReader brt;
 	
 	public FileFactory() throws IOException {
 		
-		//Necessário para escrever no arquivo
-		fw = new FileWriter(arquivo,true);
-		bw = new BufferedWriter(fw);
+		//Necessário para escrever no arquivo (funcionário)
+		fwf = new FileWriter(arquivofuncionario,true);
+		bwf = new BufferedWriter(fwf);
 		
-		//Necessário para ler o arquivo
-		fr = new FileReader(arquivo);
-		br = new BufferedReader(fr);
+		//Necessário para ler o arquivo (funcionário)
+		frf = new FileReader(arquivofuncionario);
+		brf = new BufferedReader(frf);
+		
+		
+		// tarefas 
+		fwt = new FileWriter(arquivotarefas,true );
+		bwt = new BufferedWriter(fwt);
+		
+		frt = new FileReader(arquivotarefas);
+		brt = new BufferedReader(frt);
+		
+		
+		
+	}
+	
+	public BufferedWriter getbufferredWritertarefas() {
+		return bwt;
+	}
+	public BufferedReader getBufferedReadertarefas() {
+		return brt;
 	}
 	
 	public BufferedWriter getbufferredWriter() {
-		return bw;
+		return bwf;
 	}
 	public BufferedReader getBufferedReader() {
-		return br;
+		return brf;
 	}
+	
 }
 

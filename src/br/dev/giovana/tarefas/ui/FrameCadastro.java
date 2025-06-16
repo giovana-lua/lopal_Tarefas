@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -28,12 +29,12 @@ public class FrameCadastro {
 	private JComboBox<String> boxStatus;
 	private JComboBox<String> boxResponsavel;
 	
-	public FrameCadastro() {
-			criarTela();	
+	public FrameCadastro(JFrame FrameTarefasList) {
+			criarTela(FrameTarefasList);	
 	}
 	
-	private void criarTela () {
-		JFrame tela = new JFrame();
+	private void criarTela (JFrame FrameTarefasList) {
+		JDialog tela = new JDialog(FrameTarefasList,true);
 		tela.setSize(300, 460);
 		tela.setResizable(false);
 		tela.setTitle("Cadastro de tarefas");

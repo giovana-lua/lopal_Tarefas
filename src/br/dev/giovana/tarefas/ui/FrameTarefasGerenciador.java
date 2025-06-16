@@ -39,7 +39,7 @@ public class FrameTarefasGerenciador {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				new FrameFuncionarioList();
 				
 			}
 		} );
@@ -48,7 +48,7 @@ public class FrameTarefasGerenciador {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				new FrameTarefasList(tela);
 				
 			}
 		});

@@ -10,12 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import javax.swing.JFrame;
+
 import br.dev.giovana.tarefas.dao.FuncionarioDAO;
 import br.dev.giovana.tarefas.model.Funcionario;
 import br.dev.giovana.tarefas.ui.FrameCadastro;
 import br.dev.giovana.tarefas.ui.FrameFuncionario;
 import br.dev.giovana.tarefas.ui.FrameFuncionarioList;
 import br.dev.giovana.tarefas.ui.FrameTarefasGerenciador;
+import br.dev.giovana.tarefas.ui.FrameTarefasList;
 import br.dev.giovana.tarefas.utils.Utils;
 
 public class Main {
@@ -26,8 +29,8 @@ public class Main {
 		
 		//new FrameFuncionarioList();
 		
-		new FrameCadastro();
-		//new FrameTarefasGerenciador();
+		
+		new FrameTarefasGerenciador();
 		
 		
 		
